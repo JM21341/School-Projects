@@ -2,10 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-float calculateCost(float price){
-    
-}
-
 int main(){
     char products[10][100];
     int quantities[10];
