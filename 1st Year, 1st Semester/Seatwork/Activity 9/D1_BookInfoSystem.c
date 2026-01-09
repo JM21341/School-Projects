@@ -16,8 +16,8 @@
 #include <stdio.h>
 #include <string.h> // for strcmp 
 
-#define MAX_BOOKS 5 // global variable for max books
-#define MAX_NAME_CHARS 30
+#define MAX_BOOKS 5 // constant variable for max books
+#define MAX_NAME_CHARS 30 // for reusable constant variable for max chars in name
 
 struct Book{
     char title[50];
@@ -51,18 +51,17 @@ void printAllBooks(){
 }
 
 // searching books
-void searchBook(const char* author_name, int* cont){
+void searchBook(const char* author_name){
     for(int i = 0; i < MAX_BOOKS; i++){
         if(strcmp(author_name, books[i].author) == 0){
             printf("\nTitle: %s", books[i].title);
             printf("\nAuthor: %s", books[i].author);
             printf("Publication Year: %d", books[i].year);
-            *cont = 1;
         }
     }
 }
 
-// extra func : asking to continue the main do-while loop
+// extra function : asking to continue the main do-while loop
 int askToContinue(){
     char cont;
     printf("\nDo you wish to continue? (y/n): ");
@@ -79,9 +78,9 @@ int askToContinue(){
 
 int main(){
     int dec = 0, dec2 = 0, cont = 0;
-    char author_name[MAX_NAME_CHARS];
+    char author_name[MAX_NAME_CHARS]; 
 
-    insertBooks();
+    insertBooks(); // asks the user for different books
 
     do{
         printf("\nOPTIONS AVAILABLE: ");
@@ -100,7 +99,9 @@ int main(){
                 printf("\nEnter author's name here: ");
                 scanf(" %[^\n]", author_name);
 
-                searchBook(author_name, &cont);
+                searchBook(author_name);
+
+                cont = askToContinue();
                 break;
             case 3:
                 printf("\nSuccessfully exited!");
