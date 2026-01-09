@@ -46,18 +46,25 @@ void printAllBooks(){
         printf("\nTitle: %s", books[i].title);
         printf("\nAuthor: %s", books[i].author);
         printf("\nPublication Year: %d", books[i].year);
-        printf("-----------------------------------------");
+        printf("\n-----------------------------------------\n");
     }
 }
 
 // searching books
 void searchBook(const char* author_name){
+    int exists = 0;
     for(int i = 0; i < MAX_BOOKS; i++){
         if(strcmp(author_name, books[i].author) == 0){
             printf("\nTitle: %s", books[i].title);
             printf("\nAuthor: %s", books[i].author);
-            printf("Publication Year: %d", books[i].year);
+            printf("\nPublication Year: %d", books[i].year);
+            exists = 1;
         }
+    }
+
+    if(!exists){
+        printf("\nAuthor does not exist.");
+        return;
     }
 }
 
@@ -92,7 +99,7 @@ int main(){
 
         switch(dec){
             case 1:
-                printAllBooks;
+                printAllBooks();
                 cont = askToContinue();
                 break;
             case 2:
