@@ -1,0 +1,18 @@
+------------------------------
+STUDENT LIST:
+------------------------------
+Name: John Michael Bueno
+Course: BSINFOTECH
+Age: 19
+Average: 2.25
+------------------------------
+Name: Hannah Garcia 
+Course: BSEDUC
+Age: 19
+Average: 1.75
+------------------------------
+Name: Kira Veronica
+Course: BSTOURISM
+Age: 20
+Average: 1.50
+------------------------------
